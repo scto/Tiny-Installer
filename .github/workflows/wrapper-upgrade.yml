@@ -15,13 +15,8 @@ jobs:
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
         
-      - name: Change Gradle wrapper permissions
-        run: chmod +x build-logic/gradlew
-
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
       - name: Update Gradle Wrapper
         uses: gradle-update/update-gradle-wrapper-action@v2
-        with:
-          paths: build-logic/**, */**

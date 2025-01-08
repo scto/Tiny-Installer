@@ -14,8 +14,8 @@ jobs:
       - uses: tgymnich/fork-sync@v2.0
         with:
           token: ${{ github.token }}
-          repo: Visual-Code-Space
+          repo: Tiny-Installer
           owner: scto
-          base: main
-          head: main
+          base: dev
+          head: dev
           merge_method:	merge

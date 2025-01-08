@@ -1,0 +1,27 @@
+name: Update Gradle Wrapper
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # every 30 minutes
+  workflow_dispatch:
+
+jobs:
+  update-gradle-wrapper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Change Gradle wrapper permissions
+        run: chmod +x ./gradlew
+        
+      - name: Change Gradle wrapper permissions
+        run: chmod +x build-logic/gradlew
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Update Gradle Wrapper
+        uses: gradle-update/update-gradle-wrapper-action@v2
+        with:
+          paths: build-logic/**, */**
